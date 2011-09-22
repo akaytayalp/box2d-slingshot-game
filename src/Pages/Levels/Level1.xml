@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<level3>
+    
+    <defaultSettings>
+        
+        <world name="slingShot" meterPixels="30" xGravity="0" yGravity="10" />
+        
+        <boundary width="3180" height="8000" />
+        
+        <fixtureDef density="0.1" friction="0.5" restitution="0.0" isSensor="false" />
+        
+        <bodyDef x="0.0" y="0.0" type="dynamic"
+            active="true" allowSleep="true" awake="true" bullet="false" fixedRotation="false" inertiaScale="1.0"  
+            angle="0.0" angularDamping="0.0" angularVelocity="0.0" 
+            linearDamping="0.0" linearVelocityX="0.0" linearVelocityY="0.0" />
+            
+    </defaultSettings>
+    
+    <structure name="Sign" x="1620" y="360" fixtureDefId="dense" userDataId="signStuff" type="static">
+        <box x="0" y="76" width="4" height="25" />
+        <box x="150" y="76" width="4" height="25" />
+        <box x="75" y="0" width="80" height="50" skinId="sign" />
+    </structure>
+    <userData id="signStuff" isTarget="false" canDelete="false" material="wood" />
+    
+    <structure name="Roof" x="1820" y="106" fixtureDefId="dense" userDataId="basic">
+        <trapezoid x="245" y="0" topWidth="300" bottomWidth="500" height="60" skinId="gazebo" />
+        <box x="244" y="38" width="251" height="7" />
+        <box x="0" y="81" width="7" height="35" />
+        <box x="488" y="81" width="7" height="35" />
+        <box x="0" y="147" width="7" height="30" />
+        <box x="488" y="147" width="7" height="30" />
+    </structure>
+    
+    <structure name="RowCaps" x="1856" y="291" fixtureDefId="dense" userDataId="basic">
+        <box x="0" y="0" width="43" height="7" />
+        <box x="88" y="0" width="43" height="7" />
+        <box x="328" y="0" width="43" height="7" />
+        <box x="416" y="0" width="43" height="7" />
+    </structure>
+    
+    <structure name="Row1" x="1820" y="334" fixtureDefId="dense" blueprintId="GazeboRow" />
+    
+    <structure name="Row2" x="1820" y="405" fixtureDefId="dense" blueprintId="GazeboRow" />
+    
+    <structure name="Floor" x="1660" y="451" fixtureDefId="dense" userDataId="basic">
+        <box x="202" y="0" width="50" height="10" />
+        <box x="303" y="0" width="50" height="10" />
+        <box x="404" y="0" width="50" height="10" />
+        <box x="505" y="0" width="50" height="10" />
+        <box x="606" y="0" width="50" height="10" />
+    </structure>
+    
+    <blueprint id="GazeboRow" fixtureDefId="dense" userDataId="basic">
+        <box x="0" y="0" width="7" height="35" />
+        <box x="80" y="0" width="7" height="35" />
+        <box x="160" y="0" width="7" height="35" />
+        <box x="328" y="0" width="7" height="35" />
+        <box x="408" y="0" width="7" height="35" />
+        <box x="488" y="0" width="7" height="35" />
+    </blueprint>
+    
+    <structure name="targets" x="1880" y="44" userDataId="target">
+        <circle name="Budget" x="0" y="207" radius="30" density="0" skinId="budget" />
+        <circle name="Health" x="367" y="207" radius="30" density="0" skinId="health" />
+        <circle name="Women" x="185" y="366" radius="30" density="0" skinId="women" />
+        <circle name="Vets" x="185" y="0" radius="30" density="0" skinId="verterans" />
+        <circle name="Public" x="-150" y="235" radius="30" density="0" skinId="public" />
+    </structure>
+    
+    <fixtureDef id="dense" density="10" />
+    <userData id="basic" strength="3" isTarget="false" canDelete="true" score="380" material="wood" />
+    <userData id="signStuff" isTarget="false" canDelete="false" material="wood" />
+    <userData id="target" strength="3" isTarget="true" canDelete="true" score="560" />
+    
+</level3>
